@@ -42,6 +42,8 @@ public class TelrResponseModel : Encodable & Decodable{
            E = Error, unable to check CVV */
         
     @objc public var store : String?
+    
+    @objc public var first6 : String?
         
     @objc public var key : String?
         

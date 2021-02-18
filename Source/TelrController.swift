@@ -277,6 +277,8 @@ public class TelrController: UIViewController, XMLParserDelegate {
                                 
                                 telrResponseModel.month = self._month
                                 
+                                telrResponseModel.first6 = self._cardFirst6
+                                
                                 telrResponseModel.year = self._year
                                             
                                 telrResponseModel.cvv = self._cvv
@@ -452,8 +454,12 @@ public class TelrController: UIViewController, XMLParserDelegate {
                     self._cardLast4 = xmlresponse["mobile","auth","cardlast4"].text
                     
                     self._month = xmlresponse["mobile","auth","card","expiry","month"].text
+                    
+                    self._cardFirst6 = xmlresponse["mobile","auth","card","first6"].text
 
                     self._year = xmlresponse["mobile","auth","card","expiry","year"].text
+                    
+                    self._cardFirst6 = xmlresponse["mobile","auth","card","first6"].text
 
                     self._cvv = xmlresponse["mobile","auth","cvv"].text!
 
@@ -625,9 +631,13 @@ extension TelrController : WKNavigationDelegate, WKUIDelegate, UIScrollViewDeleg
                                      
                         telrResponseModel.cardLast4 = self._cardLast4
                         
+                        telrResponseModel.first6 = self._cardFirst6
+                        
                         telrResponseModel.month = self._month
                         
                         telrResponseModel.year = self._year
+                        
+                        telrResponseModel.first6 = self._cardFirst6
                                     
                         telrResponseModel.cvv = self._cvv
                                      
